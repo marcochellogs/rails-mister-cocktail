@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="d-flex justify-content-center" id="banner">
+    <h1> Welcome to MR Cocktail</h1>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <h4> <%= link_to 'Contribute to society, Add a Cocktail', new_cocktail_path %></h4>
+  </div>
+
+      <div class="container">
+        <div class="row">
+        <% @cocktails.each do |drink|%>
+          <div class="col-sm">
+            <div class="card m-2" style="width: 18rem">
+              <img src="<%= @images.sample%>" style="height: 200px; object-fit: cover;" class="card-img-top img-card " alt=<%= drink.name %>>
+              <div class="card-body">
+                <h5 class="card-title"><%= drink.name %></h5>
+                <%= link_to 'check out ' + drink.name, cocktail_path(drink), class:'btn btn-primary' %>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        </div>
+      </div>
+
+
+</div>

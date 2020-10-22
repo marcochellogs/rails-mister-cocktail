@@ -11,3 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.image-card{
+    overflow:hidden;
+    padding-bottom:100%;
+}
+
+#banner {
+  background-image: url("./images/banner.jpg");
+  height: 300px;
+}
