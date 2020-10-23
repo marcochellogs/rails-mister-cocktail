@@ -1,4 +1,13 @@
-<div style="background-image: linear-gradient(to bottom right,rgba(236, 226, 208, 1),rgba(0,0,0,0.6))">
+
+
+<% if @cocktail.photo.attached? %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+<% else %>
+  <div class="card-category" style=" height: 400px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @images.sample, height: 300, width: 400, crop: :fill %>')">
+<% end %>
+<%= @cocktail.name %>
+</div>
+
 <div class="container" style="height: max,">
 <%= @cocktail.name %>
 <br>

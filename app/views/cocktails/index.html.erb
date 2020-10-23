@@ -14,7 +14,11 @@
         <% @cocktails.each do |drink|%>
           <div class="col-sm">
             <div class="card rounded mt-2 mx-auto" style="width: 18rem">
+              <% if drink.photo.attached? %>
+                <%= cl_image_tag drink.photo.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
               <img src="<%= @images.sample%>" style="height: 200px; object-fit: cover;" class="card-img-top img-card " alt=<%= drink.name %>>
+              <% end %>
               <div class="card-body" style="background-color: rgb(236, 226, 208)">
                 <h5 class="card-title"><%= drink.name %></h5>
                 <%= link_to 'check out ' + drink.name, cocktail_path(drink), class:'btn btn-dark' %>

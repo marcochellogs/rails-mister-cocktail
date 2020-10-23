@@ -7,6 +7,7 @@ class CocktailsController < ApplicationController
   end
   def show
     @cocktail = Cocktail.find(params[:id])
+    @images = pixabay_random_pic
   end
   def new
     @cocktail = Cocktail.new
@@ -30,7 +31,7 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
 
