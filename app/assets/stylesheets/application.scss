@@ -17,7 +17,9 @@
     padding-bottom:100%;
 }
 
-#banner {
-  background-image: url("./images/banner.jpg");
-  height: 300px;
+.btn-absolute {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }

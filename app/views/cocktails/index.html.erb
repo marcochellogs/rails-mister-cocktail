@@ -1,22 +1,23 @@
+<div style="background-image: linear-gradient(to bottom right,rgba(0,0,0,1),rgba(0,0,0,0.6))">
+<div class="container" style="background-image: linear-gradient(to bottom right,rgba(0,0,0,1),rgba(0,0,0,0.6))">
 
-<div class="container">
-  <div class="d-flex justify-content-center" id="banner">
-    <h1> Welcome to MR Cocktail</h1>
+  <div class="banner p-3 position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url(<%= asset_path 'banner.jpg' %>); height: 450px; background-size: cover; background-repeat: no-repeat; background-position: left bottom;">
+    <div class="container text-center">
+      <h1 class="m-5 text-white">Welcome to <strong>MR Cocktail</strong></h1>
+      <p class="text-white m-5">Learn about the finest drinks from around the world.</p>
+      <%= link_to 'Contribute to society, add a Cocktail', new_cocktail_path, class:'btn btn-dark btn-absolute' %>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-center">
-    <h4> <%= link_to 'Contribute to society, Add a Cocktail', new_cocktail_path %></h4>
-  </div>
-
-      <div class="container">
+      <div class="container mt-5">
         <div class="row">
         <% @cocktails.each do |drink|%>
           <div class="col-sm">
-            <div class="card m-2" style="width: 18rem">
+            <div class="card rounded mt-2 mx-auto" style="width: 18rem">
               <img src="<%= @images.sample%>" style="height: 200px; object-fit: cover;" class="card-img-top img-card " alt=<%= drink.name %>>
-              <div class="card-body">
+              <div class="card-body" style="background-color: rgb(236, 226, 208)">
                 <h5 class="card-title"><%= drink.name %></h5>
-                <%= link_to 'check out ' + drink.name, cocktail_path(drink), class:'btn btn-primary' %>
+                <%= link_to 'check out ' + drink.name, cocktail_path(drink), class:'btn btn-dark' %>
               </div>
             </div>
           </div>
@@ -25,4 +26,5 @@
       </div>
 
 
+</div>
 </div>

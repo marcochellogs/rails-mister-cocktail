@@ -25,7 +25,7 @@ class CocktailsController < ApplicationController
   def pixabay_random_pic(q = 'alcohol')
     response = HTTParty.get("https://pixabay.com/api/?key=8552570-540dab6f18162a9471dc11307&q=#{q}&image_type=photo&pretty=true")
     response["hits"].map do |photo|
-            photo["largeImageURL"]
+      photo["largeImageURL"]
     end
   end
 
